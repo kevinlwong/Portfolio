@@ -8,6 +8,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+
     <title>Personal Portfolio</title>
   </head>
 
@@ -74,10 +75,12 @@
           solutions.
         </p>
         <div class="hero__actions">
-          <a href="https://calendly.com/kevinwong973/30min"
+          <a href="https://calendly.com/kevinwong973/30min" target="_blank"
             ><button class="btn">Work With Me</button></a
           >
-          <button class="btn btn--secondary">See My Portfolio</button>
+          <a href="/documents/Resume for Kevin L. Wong.pdf" target="_blank"
+            ><button class="btn btn--secondary">See My Resume</button></a
+          >
         </div>
       </div>
 
@@ -97,7 +100,7 @@
       </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="Skills">
       <div class="skills__desc">
         <h3>Experienced Across Multiple Projects and Technologies</h3>
         <p>
@@ -445,9 +448,20 @@
 
     <section class="contact" id="Contact">
       <h5>Got a Project?</h5>
-      <h2>Let's Work Together!</h2>
-      <button class="btn">Send Message</button>
-      <p>Phone: <span>+19252508871</span></p>
+
+      <form
+        id="contact-form"
+        class="contact-form"
+        action=c093fbb48d51f6614c53d14f4b888032 
+        method="POST"
+      >
+        <h2>Let's Work Together!</h2>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Phone: <span>+1 (925) 250-8871</span></p>
     </section>
 
     <footer class="footer">
@@ -456,11 +470,79 @@
         <p>Kevin L. Wong</p>
       </div>
       <div class="footer__links">
-        <a href="#">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">About</a>
+        <a href="#Home">Home</a>
+        <a href="#Showcase">Projects</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Career">Career</a>
       </div>
     </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <script>
+      document.querySelectorAll("nav a, footer a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default instant jump
+
+          const targetId = this.getAttribute("href").substring(1); // Get section ID
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            lenis.scrollTo(targetElement, {
+              duration: 3, // Adjust scroll duration (seconds)
+              easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
+              offset: -50, // Adjust offset for fixed navbars (if needed)
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      // Initialize Lenis
+      const lenis = new Lenis({
+        duration: 2, // Adjusts scroll smoothness (default: 1)
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+        direction: "vertical", // Can be 'horizontal'
+        smooth: true, // Enables smooth scrolling
+        smoothTouch: false, // Disable smooth scrolling on touch devices
+        wheelMultiplier: 1, // Adjusts scroll speed
+      });
+
+      // Update the scroll frame
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+
+    <script>
+      function breakTheText() {
+        var h2 = document.querySelector("h2");
+        var h2Text = h2.textContent;
+        var splittedText = h2Text.split("");
+        var clutter = "";
+        splittedText.forEach(function (elem) {
+          clutter += `<span>${elem}</span>`;
+        });
+        h2.innerHTML = clutter;
+      }
+
+      window.onload = breakTheText();
+
+      gsap.from("h2 span", {
+        y: 300,
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.3,
+        stagger: 0.1,
+      });
+    </script>
   </body>
 </html>

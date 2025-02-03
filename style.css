@@ -133,7 +133,8 @@ body {
   border-radius: 10px;
 }
 
-.hero__content h2 {
+.hero__content h2,
+.hero__content span {
   font-size: 48px;
   line-height: 60px;
   font-weight: 400;
@@ -701,4 +702,77 @@ body {
     flex-direction: column-reverse;
     gap: 16px;
   }
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-form h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Input and Textarea Fields */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    background: #f9f9f9;
+}
+
+/* Focus State for Inputs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1f2937;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+/* Placeholder Styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Button */
+.contact-form button:hover {
+    background: #1f2937;
+    color: #fff;
+    transition: 0.5s all ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact-form {
+        width: 90%;
+    }
 }
