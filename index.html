@@ -19,17 +19,40 @@
 
       <div class="navbar__menu">
         <a href="#" class="navbar__link">Home</a>
-        <a href="#" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">Skills</a>
-        <a href="#" class="navbar__link">About</a>
+        <a href="#Skills" class="navbar__link">Skills</a>
+        <a href="#Showcase" class="navbar__link">Projects</a>
+        <a href="#Career" class="navbar__link">Career</a>
       </div>
 
       <div class="navbar__actions">
         <div class="navbar__location">
-          <h5>USA, Pomona</h5>
-          <p>6:18:31 pm</p>
+          <h5>Pomona, USA</h5>
+          <div id="pst-time" class="clock"></div>
+          <script>
+            function updateTime() {
+              let now = new Date();
+
+              let options = {
+                timeZone: "America/Los_Angeles",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true,
+              };
+
+              let pstTime = new Intl.DateTimeFormat("en-US", options).format(
+                now
+              );
+
+              document.getElementById("pst-time").textContent = pstTime;
+            }
+
+            setInterval(updateTime, 1000);
+
+            updateTime();
+          </script>
         </div>
-        <button class="btn">Get a Quote</button>
+        <a href="#Contact"><button class="btn">Contact Me</button></a>
       </div>
     </nav>
 
@@ -102,7 +125,7 @@
       </div>
     </section>
 
-    <section class="showcase">
+    <section class="showcase" id="Showcase">
       <div class="showcase__header">
         <h3>I Can Help You With:</h3>
         <button class="btn">See My Work</button>
@@ -300,7 +323,7 @@
       </div>
     </section>
 
-    <section class="career">
+    <section class="career" id="Career">
       <div class="career__jobs">
         <h3>Work Experience</h3>
         <div class="job">
@@ -407,25 +430,24 @@
       </div>
     </section>
 
-    <section class="contact">
-        <h5>Got a Project?</h5>
-        <h2>Let's Work Together!</h2>
-        <button class="btn">Send Message</button>
-        <p>Phone: <span>+19252508871</span></p>
+    <section class="contact" id="Contact">
+      <h5>Got a Project?</h5>
+      <h2>Let's Work Together!</h2>
+      <button class="btn">Send Message</button>
+      <p>Phone: <span>+19252508871</span></p>
     </section>
 
     <footer class="footer">
-        <div class="footer__brand">
-            <a href="#">Logo.</a>
-            <p>Kevin L. Wong</p>
-        </div>
-        <div class="footer__links">
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
-            <a href="#">Skills</a>
-            <a href="#">About</a>
-        </div>
+      <div class="footer__brand">
+        <a href="#">Logo.</a>
+        <p>Kevin L. Wong</p>
+      </div>
+      <div class="footer__links">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Skills</a>
+        <a href="#">About</a>
+      </div>
     </footer>
-
   </body>
 </html>
