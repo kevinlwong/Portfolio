@@ -150,7 +150,7 @@
     <section class="showcase" id="Showcase">
       <div class="showcase__header">
         <h3>I Can Help You With:</h3>
-        <a href="https://github.com/kevinlwong" target="_blank"
+        <a href="/documents/Resume for Kevin L. Wong.pdf"
           ><button class="btn">See My Work</button></a
         >
       </div>
@@ -352,13 +352,10 @@
           <div class="category__header">
             <div class="category__title">
               <i class="ri-group-2-line"></i>
-              <h4>Cloud Migration</h4>
+              <h4>AI and Machine Learning</h4>
             </div>
             <div class="category__desc">
-              <p>
-                End-to-end development of responsive websites that look great on
-                all devices, with a focus on performance and aesthetics.
-              </p>
+              <p>AI and ML</p>
               <a href="#"><i class="ri-share-circle-line"></i></a>
             </div>
           </div>
@@ -371,7 +368,83 @@
                 class="project-card__image"
               />
               <div class="project-card__info">
-                <h5>Portfolio-1</h5>
+                <h5>AI in Construction Chatbot</h5>
+                <p>August 2023</p>
+              </div>
+              <p class="project-card__desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi ipsam ut eum beatae maiores labore, deleniti ex at,
+                amet magnam quidem veniam, nam officia fuga! Fuga quae
+                consequatur dolores maxime.
+              </p>
+              <button class="btn">View Live Demo</button>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="assets/item-5.png"
+                alt="Portfolio 1"
+                class="project-card__image"
+              />
+              <div class="project-card__info">
+                <h5>Meal Planner</h5>
+                <p>August 2023</p>
+              </div>
+              <p class="project-card__desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi ipsam ut eum beatae maiores labore, deleniti ex at,
+                amet magnam quidem veniam, nam officia fuga! Fuga quae
+                consequatur dolores maxime.
+              </p>
+              <button class="btn">View Live Demo</button>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="assets/item-5.png"
+                alt="Portfolio 1"
+                class="project-card__image"
+              />
+              <div class="project-card__info">
+                <h5>Duolingo Learner Dropoff Prediction Dashboard</h5>
+                <p>August 2023</p>
+              </div>
+              <p class="project-card__desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi ipsam ut eum beatae maiores labore, deleniti ex at,
+                amet magnam quidem veniam, nam officia fuga! Fuga quae
+                consequatur dolores maxime.
+              </p>
+              <button class="btn">View Live Demo</button>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="assets/item-5.png"
+                alt="Portfolio 1"
+                class="project-card__image"
+              />
+              <div class="project-card__info">
+                <h5>Facial Expression Classifier</h5>
+                <p>August 2023</p>
+              </div>
+              <p class="project-card__desc">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi ipsam ut eum beatae maiores labore, deleniti ex at,
+                amet magnam quidem veniam, nam officia fuga! Fuga quae
+                consequatur dolores maxime.
+              </p>
+              <button class="btn">View Live Demo</button>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="assets/item-5.png"
+                alt="Portfolio 1"
+                class="project-card__image"
+              />
+              <div class="project-card__info">
+                <h5>PatchPal</h5>
                 <p>August 2023</p>
               </div>
               <p class="project-card__desc">
@@ -492,7 +565,7 @@
           <a href="#"><i class="ri-external-link-line"></i></a>
         </div>
 
-        <div class="award">
+        <!-- <div class="award">
           <div>
             <i class="ri-medal-fill"></i>
             <div class="award__info">
@@ -532,7 +605,7 @@
             </div>
           </div>
           <a href="#"><i class="ri-external-link-line"></i></a>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -582,7 +655,14 @@
         .querySelectorAll("nav a, footer a, section a")
         .forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
-            e.preventDefault(); // Prevent default instant jump
+            const href = this.getAttribute("href");
+            // Prevent default only for internal navigation (like #sections)
+            if (href.startsWith("#")) {
+              e.preventDefault();
+              document
+                .querySelector(href)
+                .scrollIntoView({ behavior: "smooth" });
+            }
 
             const targetId = this.getAttribute("href").substring(1); // Get section ID
             const targetElement = document.getElementById(targetId);
