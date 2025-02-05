@@ -282,8 +282,12 @@ body {
   border-color: #1f2937;
 }
 
-.showcase_categories .category:first-child {
+.showcase_categories .category {
   margin-bottom: 100px;
+}
+
+.showcase_categories .category:last-child {
+  margin-top: 0;
 }
 
 .category__header {
