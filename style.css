@@ -63,9 +63,16 @@ body {
 
 .navbar {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f3f4f6;
+  z-index: 1000;
   align-items: center;
   justify-content: space-between;
   padding: 20px 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar__logo {
