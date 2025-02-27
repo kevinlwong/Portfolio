@@ -169,6 +169,13 @@ body {
   margin-bottom: 10px;
 }
 
+.hero__intro h2 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
 .hero__intro p {
   color: #6b7280;
   font-weight: 500;
