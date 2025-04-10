@@ -578,6 +578,18 @@ body {
   font-weight: 500;
 }
 
+@media screen and (max-width: 2070px) {
+ 
+
+  .category__projects {
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    width: 48%;
+  }
+}
+
 @media screen and (max-width: 1230px) {
   .hero__image {
     width: 100%;
