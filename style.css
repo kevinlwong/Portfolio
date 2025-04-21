@@ -442,9 +442,8 @@ body {
 }
 
 .career {
-  padding: 60px 60px 80px;
+  padding: 60px 60px 60px;
   display: flex;
-  align-items: center;
   gap: 100px;
 }
 
@@ -580,7 +579,12 @@ body {
 
 @media screen and (max-width: 2070px) {
  
-
+  .career {
+    padding: 60px 300px 60px;
+    display: flex;
+    gap: 100px;
+  }
+  
   .category__projects {
     flex-wrap: wrap;
   }
@@ -644,6 +648,12 @@ body {
   .project-card {
     width: 48%;
   }
+
+  .career {
+    padding: 60px 100px 60px;
+    display: flex;
+    gap: 100px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -699,7 +709,7 @@ body {
   }
 
   .career {
-    padding: 60px 30px 80px;
+    padding: 60px 100px 80px;
     flex-direction: column;
     gap: 60px;
   }
@@ -756,6 +766,11 @@ body {
 
   .career h3 {
     font-size: 26px;
+  }
+  .career {
+    padding: 60px 60px 60px;
+    display: column;
+    gap: 100px;
   }
 
   .footer {
