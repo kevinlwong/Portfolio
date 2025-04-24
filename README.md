@@ -2,7 +2,7 @@ Here's a clean, professional `README.md` tailored for your static portfolio host
 
 ---
 
-```markdown
+
 # Kevin Wong – Personal Portfolio
 
 🌐 Live Site: [portfolio-kevinlwong.vercel.app](https://portfolio-kevinlwong.vercel.app)
