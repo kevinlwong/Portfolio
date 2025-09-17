@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+
+:root {
+            --primary: #634e01;
+            --secondary: #ffffff;
+            --accent: #d4af37;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #ffb300;
+            --danger: #f94144;
+            --info: #4895ef;
+        }
+
 * {
   margin: 0;
   padding: 0;
@@ -381,12 +394,40 @@ body {
 
 .project-card__image {
   width: 100%;
-  height: 200px;
+  height: 400px;
   border-radius: 10px;
   object-position: top center;
+  object-fit: cover;
   border: 1px solid #e5e7eb;
   margin-bottom: 20px;
+   transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+  transform-origin: center; /* Zoom from the center of the image */
 }
+
+/* Zoom out effect on hover */
+.project-card:hover .project-card__image {
+  transform: scale(0.95); /* Slightly reduces the image size */
+}
+
+/* haea specific project cards due to large images */
+
+.project-card__image_haea {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  object-position:  center;
+  object-fit: contain;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+   transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+  transform-origin: center; /* Zoom from the center of the image */
+}
+
+/* Zoom out effect on hover */
+.project-card:hover .project-card__image_haea {
+  transform: scale(0.95); /* Slightly reduces the image size */
+}
+
 
 .project-card__info {
   display: flex;
@@ -460,6 +501,25 @@ body {
 
 .project-card .btn2:hover {
   background: #000;
+}
+
+/* tags for skills used in project cards */
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 1.5rem;
+}
+
+.tech-tag {
+  background-color: var(--light);
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .career {
